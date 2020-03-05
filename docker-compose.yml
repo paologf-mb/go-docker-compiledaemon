@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ".:/go/"
+    container_name: test
+    command: bash -c "go get github.com/githubnemo/CompileDaemon && CompileDaemon -command="./app""
+    tty: true
